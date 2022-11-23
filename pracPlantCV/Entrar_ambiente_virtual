@@ -1,0 +1,16 @@
+Entrar al ambiente virtual
+
+Abrir la terminal (ctr-alt-t)
+
+source /home/dralfredo/Documentos/python3.9_env/plantcv/bin/activate
+
+
+salir del ambiente
+
+deactivate
+
+
+Entrar al directorio de trabajo:
+
+
+cd '/home/dralfredo/Documentos/CursoFiv610/pracPlantCV'

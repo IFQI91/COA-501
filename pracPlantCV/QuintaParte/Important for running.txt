@@ -1,0 +1,90 @@
+IMPORTANT NOTE
+
+PROCEDURE
+A) Install ImageJ
+
+https://imagej.nih.gov/ij/download.html
+
+B) Install Pixel Inspection Tool
+
+https://imagej.nih.gov/ij/plugins/pixel-tool/index.html
+Se entra a la pagina de internet y posteriormetne
+	Pixel_Inspection_Tool.java
+y se guarda como archivo JAVA en la carpeta donde tenemos el programa ImageJ
+
+
+C)
+Collect pixel color data in the tool Pixel Inspection Tool in ImageJ.
+The format is as follows (independly from the nxn matrix)
+va a guardar como una matrix, para identificar las clases es con el simbolo de gato, matriz de 3x3
+separado los valores por comas del RGB, valor de cada uno de los pixeles
+
+
+#plant
+93,166,104  94,150,101  82,137,91
+86,154,102  87,145,94   79,137,95
+116,185,135 103,172,126 96,166,126
+#postule
+216,130,52  217,129,51  221,132,53
+218,131,53  223,132,54  221,132,53
+219,131,54  221,132,54  225,135,56
+#chlorosis
+255,242,89  255,241,90  255,239,87
+254,239,87  255,241,90  254,238,88
+255,241,88  253,238,87  255,240,90
+#background
+31,42,54    42,52,60    40,49,58
+28,38,51    32,43,55    36,47,59
+24,35,45    30,40,50    37,49,66
+
+Note: Columns are separated by tabs, and when copied using the pixel inspection tool data has this format!
+
+
+
+(for this we need to instal ImageJ and pixel inspection tool)
+
+
+The data is saved in a file with txt extension
+
+
+D)
+
+for tabulate RGB values:
+
+python C:\Users\semex_7vulq7b\Documents\progpython\Scripts\plantcv-utils.py tabulate_bayes_classes -i ./pixeles.txt -o ./res-pdfs.txt
+
+#-i es el archivo 
+#-o es para como se va a guardar el archivo
+
+Note: columns in rgb-datos.txt are with tabs
+
+
+for training
+# entrenamiento
+#usaremos los datos tabulados con el archivo res-pdfs.txt
+#en el archivo de salida resulted-multiclass-pdfs.txt nos arroja el modelo como yun resultado
+
+python C:\Users\semex_7vulq7b\Documents\progpython\Scripts\plantcv-train.py naive_bayes_multiclass -f res-pdfs.txt -o resulted-multiclass-pdfs.txt 
+
+#genera muchos parametros para el clasificador valleciano.
+posteriormetne se entra al programa
+
+
+Note: plantcv-train.py is self running. It does not need to be started with python3.9
+
+E) The file with the pdfs (step B)) can be used to make pixel classification using:
+#se puede utilziar el ultimo archivo para crear una mascara, y sera multimatriz con diferentes canales.
+
+mask = pcv.naive_bayes_classifer(img,pdf_file="resulted-multiclass-pdfs.txt")
+
+
+See naivebayes_multiclass.ipynb Jupiter notebook
+
+
+WORKFLOW
+
+Note: The Jupiter notebook naivebayes_multiclass.ipynb can be adapted to be used in the workflow bayes-classifier-workflow.py
+
+
+python3.9 ./bayes-classifier-workflow.py -i ./leafspotcoco.png -o ./ -r ./res.txt -w -D 'print' -p resulted-multiclass-pdfs.txt
+

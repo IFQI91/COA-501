@@ -1,0 +1,11 @@
+IMPORTANT
+
+
+
+WORKFLOW
+
+Note: The Jupiter notebook naivebayes_multiclass.ipynb can be adapted to be used in the workflow bayes-classifier-workflow.py
+
+
+python ./bayes-classifier-workflow.py -i ./viola00.jpg -o ./resultados -r ./res.csv -w -D 'print' -p resulted-multiclass-pdfs.txt
+

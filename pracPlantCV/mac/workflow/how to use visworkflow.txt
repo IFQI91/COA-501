@@ -1,0 +1,7 @@
+How to run visworkflow.py
+
+./proceso_semillas.py -i semilla1.jpg -o ./output-images -r ressemilla.txt -w -D 'print'
+
+python3.9 proceso_semillas.py -i semilla1.jpg -o ./output-images -r ressemilla.csv -w -D 'print'
+
+https://github.com/danforthcenter/plantcv/issues/453

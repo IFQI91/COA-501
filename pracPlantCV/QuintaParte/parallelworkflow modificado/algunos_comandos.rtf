@@ -1,0 +1,61 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red49\green49\blue49;\red251\green251\blue251;\red222\green53\blue46;
+\red255\green255\blue255;\red246\green246\blue246;\red0\green0\blue0;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c25098\c25098\c25098;\cssrgb\c98824\c98824\c98824;\cssrgb\c90588\c29804\c23529;
+\cssrgb\c100000\c100000\c100000;\cssrgb\c97255\c97255\c97255;\cssrgb\c0\c0\c0;\csgray\c0;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sa480\partightenfactor0
+
+\f0\fs32 \cf2 \cb3 \expnd0\expndtw0\kerning0
+To run 
+\f1\fs24 \cf4 \cb5 plantcv-workflow.py
+\f0\fs32 \cf2 \cb3  with a config file you can use the following:\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf2 \cb6 python plantcv-workflow.py --config my_config.json\
+\pard\pardeftab720\sa480\partightenfactor0
+
+\f0\fs32 \cf2 \cb3 Remember that 
+\f1\fs24 \cf4 \cb5 python
+\f0\fs32 \cf2 \cb3  and 
+\f1\fs24 \cf4 \cb5 plantcv-workflow.py
+\f0\fs32 \cf2 \cb3  need to be in your PATH, for example with Conda environment. On Windows you will need to specify the whole path to 
+\f1\fs24 \cf4 \cb5 plantcv-workflow.py
+\f0\fs32 \cf2 \cb3 .\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs22 \cf8 \cb1 \kerning1\expnd0\expndtw0 \CocoaLigature0 plantcv-workflow.py \\\
+--dir ./my_images \\\
+--workflow bayes-classifier-workflow.py \\\
+\'97-json \'93./output2.json\'94 \\\
+--outdir . \\\
+--meta id \\\
+--create \\\
+--other_args="--pdfs resulted-multiclass-pdfs.txt"\
+\
+python3.9 plantcv-workflow.py \\\
+\'97-config my_config.json \\\
+--other_args=\'93\'97-pdfs resulted-multiclass-pdfs.txt"\
+\
+\
+plantcv-workflow.py \\\
+-d ./my images \\\
+-p bayes-classifier-workflow.py\
+-j output.json\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+plantcv-workflow.py \\\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+--dir ./my_images \\\
+--workflow bayes-classifier-workflow.py \\\
+--outdir . \\\
+--meta id \\\
+--create \\\
+--other_args="--pdfs resulted-multiclass-pdfs.txt"\
+}
